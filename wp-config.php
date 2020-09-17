@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-if(strstr($_SERVER['SERVER_NAME'], 'samuiarena.local')){
+if(strstr($_SERVER['SERVER_NAME'], 'saa.local')){
 	define( 'DB_NAME', 'local' );
 
 	/** MySQL database username */

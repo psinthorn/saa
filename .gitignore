@@ -17,7 +17,7 @@ wp-content/themes/twenty*/
 # ignore node dependency directories
 node_modules/
 ai1wm-backups/
-
+wp-content/updraft/
 
 # ignore log files and databases
 *.log
