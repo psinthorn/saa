@@ -26,6 +26,8 @@
         </div>
       </div>
 
+      <?php wp_reset_postdata(); ?>
+
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
           <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>

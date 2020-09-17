@@ -31,6 +31,9 @@
     <?php 
         showPostListByTypeQuery(array('posttype'=>'co-space', 'perpage'=>4));
     ?>
+
+    <?php wp_reset_postdata(); ?>
+    
 </div>   
 </div>
 <?php get_footer(); ?>
