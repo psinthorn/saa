@@ -99,8 +99,8 @@
                 'posts_per_page' => $args['perpage'],
                 'post_type' => $args['posttype'],
                 // 'meta_key' => 'event_date',
-                // 'orderby' => 'meta_value_num',
-                'order' => 'ASC',
+                'orderby' => 'meta_value_num',
+                'order' => 'DESC',
                 // 'meta_query' => array(
                 //     array(
                 //         'key' => 'event_date',
@@ -156,6 +156,7 @@
         add_image_size('teamworkLandscape', 400, 260, true);
         add_image_size('teamworkPortrait', 480, 650, true);
         add_image_size('pageBanner', 1500, 350, true);
+        add_image_size('featureImage', 300, 300, true);
     }
     add_action('after_setup_theme', 'f2_blueprint_features');
 

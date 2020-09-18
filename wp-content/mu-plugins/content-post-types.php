@@ -4,7 +4,7 @@
          // Field post type
         register_post_type('field', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+            'supports' => array('title', 'editor', 'excerpt', 'thumbnail','page-attributes'),
             'rewrite' => array('slug' => 'fields'),
             'has_archive' => true,
             'public' => true,
@@ -39,7 +39,7 @@
         // Type post type
         register_post_type('type', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor','page-attributes'),
             'rewrite' => array('slug' => 'types'),
             'has_archive' => true,
             'public' => true,
@@ -58,7 +58,7 @@
          // Type post rate
         register_post_type('rate', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'page-attributes'),
             'rewrite' => array('slug' => 'rates'),
             'has_archive' => true,
             'public' => true,
@@ -76,7 +76,7 @@
          // Type post facility
         register_post_type('facility', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'page-attributes'),
             'rewrite' => array('slug' => 'facilities'),
             'has_archive' => true,
             'public' => true,
@@ -94,7 +94,7 @@
           // Type post cospace
         register_post_type('co-space', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'page-attributes'),
             'rewrite' => array('slug' => 'co-spaces'),
             'has_archive' => true,
             'public' => true,
@@ -113,7 +113,7 @@
         // Teamwork post type
         register_post_type('teamwork', array(
             'show_in_rest' => true,
-            'supports' => array('title', 'editor','thumbnail'),
+            'supports' => array('title', 'editor','thumbnail', 'page-attributes'),
             'rewrite' => array('slug' => 'teamworks'),
             'has_archive' => true,
             'public' => true,

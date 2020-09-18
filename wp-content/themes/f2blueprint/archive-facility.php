@@ -30,44 +30,11 @@
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block" style="width: 30%;">
     </div>
     <div class="row mb-5">
-        <div class="col-sm-12 col-md-4 col-lg-4 mt-3">
-            <div class="card mb-5" style="height: 30rem;">
-                <img class="card-img-top" src="<?php echo get_theme_file_uri('/images/samui_arena_facilities_changing_room_02.jpg'); ?>"
-                    alt="Samui Arena Facilities">
-                <div class="card-body" style="background: lightgrey;">
-                    <h5 class="card-title">Reception</h5>
-                    <p class="card-text">Samui Arena has spacious reception right at the main entrance include of non
-                        alcohol drinks sell.
-                    </p>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 mt-3 ">
-            <div class="card mb-5" style="height: 30rem;">
-                <img class="card-img-top" src="<?php echo get_theme_file_uri('/images/samui_arena_facilities_changing_room_03.jpg'); ?>" alt="Samui Arena Facilities" >
-                <div class="card-body" style="background: lightgrey;">
-                    <h5 class="card-title">Bath Room</h5>
-                    <p class="card-text">Our service include of hot & cold shower are provides within male and female
-                        bathroom.
-                    </p>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 mt-3 ">
-            <div class="card mb-5" style="height: 30rem;">
-                <img class="card-img-top" src="<?php echo get_theme_file_uri('/images/samui_arena_facilities_changing_room_01.jpg'); ?>"
-                    alt="Samui Arena Facilities">
-                <div class="card-body" style="background: lightgrey;">
-                    <h5 class="card-title">Changing Room</h5>
-                    <p class="card-text">On Samui Arena ground changing room is provides within male and female
-                        bathroom.
-                    </p>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-            </div>
-        </div>
+
+            <?php 
+            showPostListByTypeQuery(array('posttype'=>'facility', 'perpage'=>4)); 
+            wp_reset_postdata();
+            ?>       
     </div>
 </div>
 </div>
