@@ -2,6 +2,7 @@
 
 // Sub Page and post banner auto selection 
     function pageBanner($args = NULL) {
+
         if (!$args['title']) {
             $args['title'] = get_the_title(); 
         }
@@ -27,6 +28,49 @@
             </div>
             </div>  
         </div>
+
+    <?php 
+    }
+
+// Home Page banner auto selection 
+    function homePageBanner($args = NULL) {
+        if (!$args['title']) {
+            $args['title'] = get_the_title(); 
+        }
+        if (!$args['subtitle']) {
+            $args['subtitle'] = get_field('page_banner_sub_title');
+        }
+
+
+        if (!$args['photo']) {
+            if (get_field('page_banner_background_image')) {
+                 $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner']; 
+            } else {
+                 $args['photo'] = get_theme_file_uri('/images/sa-bg.jpg');
+            }
+           
+        }
+    ?>
+
+    <div class="page-banner"> 
+      <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>)"></div>
+      <div class="page-banner__content container t-center c-white">
+        <h1 class="headline headline--large"><?php echo $args['title']; ?></h1>
+        <h2 class="headline headline--medium"><?php echo $args['subtitle']; ?></h2>
+        <h3 class="headline headline--small"><?php the_content(); ?></h3>
+        <a href="/rates" class="btn btn--large btn--blue">Check Our Rate</a>
+      </div>
+  </div>
+
+    <!-- <div class="page-banner">
+            <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>"></div>
+            <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
+            <div class="page-banner__intro">
+                <p><?php echo $args['subtitle']; ?></p>
+            </div>
+            </div>  
+        </div> -->
 
     <?php 
     }
@@ -65,8 +109,65 @@
             }      
     }
     
+    // Spotlight slide
+    // Work with post type 
+    // Send posttype argument to display 
+
+    function spotlightSlide($args = NULL) {
+
+        $default = 'spotlight';
+
+        if(!$args['posttype']) {
+            $args['posttype'] = $default;
+        } 
+
+        if(!$args['perpage']){
+            $args['perpage'] = 3;
+        }
+  
+            $today = date('Ymd');
+
+            $spotlightListQuery = new WP_Query(array(
+                'posts_per_page' => $args['perpage'],
+                'post_type' => $args['posttype'],
+                // 'meta_key' => 'event_date',
+                // 'orderby' => 'meta_value_num',
+                'order' => 'ASC',
+            ));
+
+            ?>
+                 <div class="hero-slider">
+                        <div data-glide-el="track" class="glide__track">
+                            <div class="glide__slides">
+            
 
 
+            <?php
+
+            if($spotlightListQuery->have_posts()) {
+                    while($spotlightListQuery->have_posts()){
+                    $spotlightListQuery->the_post(); 
+                     get_template_part('partials/content', 'spotlight');        
+                }
+        ?>
+
+                    </div>
+                            <div class="slider__bullets glide__bullets hide" data-glide-el="controls[nav]"></div>
+                        </div>
+                    </div> 
+
+    <?php
+            } else {
+                echo "No slide display";
+            }
+        ?>
+
+    <?php 
+     }
+    ?>
+
+
+    <?php 
     // Show events list 
     function showPostListByTypeQuery($args = NULL) {
          $today = date('Ymd');
