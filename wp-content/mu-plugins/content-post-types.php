@@ -145,6 +145,7 @@
             ),
             'menu_icon' => 'dashicons-images-alt'
         ));
+        
     }
 
     add_action('init', 'content_post_types'); 
